@@ -5,6 +5,7 @@ import {
   Title,
   BorderBottom,
   Container,
+  Text,
   Input,
   Button,
 } from "../../assets/styles/Theme";
@@ -66,12 +67,13 @@ export default function Work() {
           <Tattoo id={tattoo.id} picture={tattoo.picture} />
         ))}
       </TattoosContainer>
+      <Text>Ajouter une photo</Text>
       <SmallInput
-        placeholder="Insérer le lien direct vers l'image"
+        placeholder="Insérer le lien direct vers la photo"
         value={picture}
         onChange={(e) => setPicture(e.target.value)}
       />
-      <Button onClick={postNewPicture}>Ajouter un dessin</Button>
+      <Button onClick={postNewPicture}>Ajouter une photo</Button>
     </Container>
   );
 }

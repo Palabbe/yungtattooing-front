@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled, { keyframes } from "styled-components";
-import { Sizes, Container, Button } from "../../assets/styles/Theme";
+import { Sizes, Container, DeleteButton } from "../../assets/styles/Theme";
 import { toast } from "react-toastify";
 import { zoomIn } from "react-animations";
 
@@ -14,13 +14,6 @@ const Picture = styled.img`
   @media (max-width: ${Sizes.tablet}) {
     width: 80%;
     margin-top: 2rem;
-`;
-
-const DeleteButton = styled(Button)`
-  width: 2rem;
-  height: 2rem;
-  vertical-align: middle;
-  border-radius: 50%;
 `;
 
 export default function Tattoo({ id, picture }) {

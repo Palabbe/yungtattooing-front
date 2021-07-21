@@ -82,4 +82,12 @@ export const Button = styled.button`
   }
 `;
 
+export const DeleteButton = styled(Button)`
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: middle;
+  border-radius: 50%;
+  font-size: 1rem;
+`;
+
 export default Theme;

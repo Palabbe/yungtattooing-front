@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Sizes, Container, Text } from "../../assets/styles/Theme";
+import axios from "axios";
+import { toast } from "react-toastify";
+import {
+  Sizes,
+  Container,
+  Text,
+  DeleteButton,
+} from "../../assets/styles/Theme";
 
 const CardContainer = styled(Container)`
   margin: 3%;
@@ -25,7 +32,19 @@ const ClientOpinion = styled(Text)`
   font-size: 0.9rem;
 `;
 
-export default function Card({ name, picture, opinion }) {
+export default function Card({ id, name, picture, opinion }) {
+  const deleteRecommendation = () => {
+    axios
+      .delete(`http://localhost:4040/recommendations/${id}`)
+      .then(
+        (res) => console.log("Status :", res.status),
+        toast.success(`Cet avis a été supprimé`)
+      )
+      .catch((err) => {
+        console.error(err);
+        toast.error(`${err.message}`);
+      });
+  };
   return (
     <CardContainer flex column>
       <Container flex aiCenter jcCenter>
@@ -33,6 +52,9 @@ export default function Card({ name, picture, opinion }) {
       </Container>
       <ClientName>{name}</ClientName>
       <ClientOpinion>{opinion}</ClientOpinion>
+      <DeleteButton onClick={deleteRecommendation}>
+        <i class="fas fa-trash-alt"></i>
+      </DeleteButton>
     </CardContainer>
   );
 }

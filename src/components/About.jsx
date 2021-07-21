@@ -102,6 +102,7 @@ export default function About() {
         <Title>ABOUT ME</Title>
         <BorderBottom />
         <Text>{aboutInfos.text}</Text>
+        <Text>Modifier la description</Text>
         <Input value={text} onChange={(e) => setText(e.target.value)} />
         <Button onClick={updateText}>Modifier la description</Button>
       </TextContainer>

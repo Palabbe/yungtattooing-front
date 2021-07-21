@@ -5,6 +5,7 @@ import {
   Title,
   BorderBottom,
   Container,
+  Text,
   Input,
   Button,
 } from "../../assets/styles/Theme";
@@ -14,12 +15,13 @@ import { toast } from "react-toastify";
 const CardsContainer = styled(Container)`
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-bottom: 3%;
+  margin: 0;
 `;
 
 const SmallInput = styled(Input)`
   width: 20rem;
   height: 1rem;
+  margin-bottom: 1rem;
 `;
 
 export default function Recommendations() {
@@ -73,12 +75,14 @@ export default function Recommendations() {
       <CardsContainer flex>
         {recommendations.map((recommendation) => (
           <Card
+            id={recommendation.id}
             name={recommendation.client_name}
             picture={recommendation.client_picture}
             opinion={recommendation.client_opinion}
           />
         ))}
       </CardsContainer>
+      <Text>Ajouter un avis</Text>
       <SmallInput
         placeholder="Nom du client"
         value={clientName}

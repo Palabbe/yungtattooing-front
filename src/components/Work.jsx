@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
   Sizes,
   Title,
@@ -8,10 +8,14 @@ import {
   Container,
   Button,
 } from "../assets/styles/Theme";
+import { zoomIn } from "react-animations";
+
+const zoomInAnimation = keyframes`${zoomIn}`;
 
 const Picture = styled.img`
   width: 25rem;
   margin-top: 5rem;
+  animation: 1s ${zoomInAnimation};
   &:hover {
     transform: scale(1.1);
   }

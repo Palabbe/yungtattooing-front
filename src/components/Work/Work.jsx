@@ -1,33 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import {
-  Sizes,
   Title,
   BorderBottom,
   Container,
   Input,
   Button,
-} from "../assets/styles/Theme";
+} from "../../assets/styles/Theme";
+import Card from "./Card";
 import { toast } from "react-toastify";
-import { zoomIn } from "react-animations";
-
-const zoomInAnimation = keyframes`${zoomIn}`;
 
 const TattoosContainer = styled(Container)`
   flex-wrap: wrap;
-`;
-
-const Picture = styled.img`
-  height: 30rem;
-  margin-top: 5rem;
-  animation: 1s ${zoomInAnimation};
-  &:hover {
-    transform: scale(1.1);
-  }
-  @media (max-width: ${Sizes.tablet}) {
-    width: 80%;
-    margin-top: 2rem;
+  margin: 0;
 `;
 
 const SmallInput = styled(Input)`
@@ -77,7 +63,9 @@ export default function Work() {
       <BorderBottom />
       <TattoosContainer flex aiCenter jcCenter>
         {workInfos.map((tattoo) => (
-          <Picture src={tattoo.picture} />
+          <Container>
+            <Card id={tattoo.id} picture={tattoo.picture} />
+          </Container>
         ))}
       </TattoosContainer>
       <SmallInput

@@ -13,6 +13,7 @@ export const Container = styled.div`
   ${(props) => props.aiCenter && "align-items:center"};
   ${(props) => props.acCenter && "align-content:center"};
   ${(props) => props.jcCenter && "justify-content:center"};
+  margin-bottom: 2rem;
 `;
 
 const Theme = {
@@ -71,6 +72,7 @@ export const Button = styled.button`
   color: white;
   padding: 0.7rem;
   border: none;
+  border-radius: 0.5rem;
   width: 7rem;
   margin-top: 1rem;
   font-family: "Poppins", sans-serif;

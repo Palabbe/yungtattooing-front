@@ -6,15 +6,20 @@ import {
   BorderBottom,
   Container,
   Input,
+  Button,
 } from "../../assets/styles/Theme";
 import Card from "./Card";
 import { toast } from "react-toastify";
 
 const CardsContainer = styled(Container)`
-  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 3%;
+`;
+
+const SmallInput = styled(Input)`
+  width: 20rem;
+  height: 1rem;
 `;
 
 export default function Recommendations() {
@@ -65,7 +70,7 @@ export default function Recommendations() {
     <Container flex column aiCenter jcCenter>
       <Title>PEOPLE SAY</Title>
       <BorderBottom />
-      <CardsContainer>
+      <CardsContainer flex>
         {recommendations.map((recommendation) => (
           <Card
             name={recommendation.client_name}
@@ -74,6 +79,22 @@ export default function Recommendations() {
           />
         ))}
       </CardsContainer>
+      <SmallInput
+        placeholder="Nom du client"
+        value={clientName}
+        onChange={(e) => setClientName(e.target.value)}
+      />
+      <SmallInput
+        placeholder="Insérer le lien direct vers l'image"
+        value={clientPicture}
+        onChange={(e) => setClientPicture(e.target.value)}
+      />
+      <SmallInput
+        placeholder="Avis"
+        value={clientOpinion}
+        onChange={(e) => setClientOpinion(e.target.value)}
+      />
+      <Button onClick={postNewRecommendation}>Ajouter un avis</Button>
     </Container>
   );
 }

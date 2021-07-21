@@ -46,6 +46,7 @@ export const BorderBottom = styled.div`
 
 export const Text = styled.p`
   font-size: 1rem;
+  line-height: 1.2rem;
   @media (max-width: ${Sizes.tablet}) {
     font-size: 0.9rem;
   }

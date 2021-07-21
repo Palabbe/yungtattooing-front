@@ -11,6 +11,7 @@ const StyledBurger = styled.div`
   right: 20px;
   z-index: 20;
   display: none;
+  margin-top: 1rem;
 
   @media (max-width: ${Sizes.tablet}) {
     display: flex;

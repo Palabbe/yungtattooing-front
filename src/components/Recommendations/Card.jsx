@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import axios from "axios";
 import { toast } from "react-toastify";
 import {
@@ -8,13 +8,18 @@ import {
   Text,
   DeleteButton,
 } from "../../assets/styles/Theme";
+import { zoomIn } from "react-animations";
+
+const zoomInAnimation = keyframes`${zoomIn}`;
 
 const CardContainer = styled(Container)`
   margin: 3%;
   padding: 3%;
   width: 20%;
+  animation: 1s ${zoomInAnimation};
   @media (max-width: ${Sizes.tablet}) {
     width: 60%;
+    animation: none;
   }
 `;
 

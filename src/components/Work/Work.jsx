@@ -63,9 +63,7 @@ export default function Work() {
       <BorderBottom />
       <TattoosContainer flex aiCenter jcCenter>
         {workInfos.map((tattoo) => (
-          <Container>
-            <Tattoo id={tattoo.id} picture={tattoo.picture} />
-          </Container>
+          <Tattoo id={tattoo.id} picture={tattoo.picture} />
         ))}
       </TattoosContainer>
       <SmallInput

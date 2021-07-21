@@ -11,8 +11,10 @@ import Card from "./Card";
 import { toast } from "react-toastify";
 
 const CardsContainer = styled(Container)`
+  display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0;
+  margin-bottom: 3%;
 `;
 
 export default function Recommendations() {
@@ -63,15 +65,13 @@ export default function Recommendations() {
     <Container flex column aiCenter jcCenter>
       <Title>PEOPLE SAY</Title>
       <BorderBottom />
-      <CardsContainer flex aiCenter jcCenter>
+      <CardsContainer>
         {recommendations.map((recommendation) => (
-          <Container>
-            <Card
-              name={recommendation.client_name}
-              picture={recommendation.client_picture}
-              opinion={recommendation.client_opinion}
-            />
-          </Container>
+          <Card
+            name={recommendation.client_name}
+            picture={recommendation.client_picture}
+            opinion={recommendation.client_opinion}
+          />
         ))}
       </CardsContainer>
     </Container>

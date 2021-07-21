@@ -6,13 +6,11 @@ const CardContainer = styled(Container)`
   margin: 3%;
   padding: 3%;
   width: 25%;
-  height: auto;
-  border: solid 1px #dfd7d0;
+  height: 40rem;
 `;
 
 const Picture = styled.img`
-  height: 30rem;
-  margin-top: 5rem;
+  height: 20rem;
   @media (max-width: ${Sizes.tablet}) {
     width: 80%;
     margin-top: 2rem;

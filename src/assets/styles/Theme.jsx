@@ -51,6 +51,7 @@ export const Text = styled.p`
 `;
 
 export const Button = styled.button`
+  font-family: "Poppins", sans-serif;
   background-color: ${Theme.colorDarkBrown};
   color: white;
   padding: 0.7rem;

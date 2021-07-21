@@ -50,6 +50,21 @@ export const Text = styled.p`
   }
 `;
 
+export const Input = styled.input`
+  padding: 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.3);
+  &:hover {
+    border: 1px solid ${Theme.colorBeige};
+  }
+  &:focus {
+    outline: none;
+    border: 1px solid ${Theme.colorOchre};
+  }
+`;
+
 export const Button = styled.button`
   font-family: "Poppins", sans-serif;
   background-color: ${Theme.colorDarkBrown};

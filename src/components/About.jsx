@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import Theme, {
+import {
   Sizes,
   Title,
   BorderBottom,
   Text,
   Container,
+  Input,
   Button,
 } from "../assets/styles/Theme";
 import juliette from "../assets/img/juliette.jpeg";
@@ -31,21 +32,6 @@ const TextContainer = styled(Container)`
     width: 80%;
     margin: 0;
     animation: none;
-  }
-`;
-
-const Input = styled.input`
-  padding: 0.5rem;
-  width: 100%;
-  height: 9rem;
-  border: none;
-  box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.3);
-  &:hover {
-    border: 1px solid ${Theme.colorBeige};
-  }
-  &:focus {
-    outline: none;
-    border: 1px solid ${Theme.colorOchre};
   }
 `;
 

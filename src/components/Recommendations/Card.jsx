@@ -13,12 +13,15 @@ const CardContainer = styled(Container)`
   margin: 3%;
   padding: 3%;
   width: 20%;
+  @media (max-width: ${Sizes.tablet}) {
+    width: 60%;
+  }
 `;
 
 const Picture = styled.img`
   width: 80%;
   @media (max-width: ${Sizes.tablet}) {
-    width: 80%;
+    width: 100%;
     margin-top: 2rem;
 `;
 

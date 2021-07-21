@@ -94,6 +94,9 @@ export const AdminContainer = styled(Container)`
   background-color: ${Theme.colorBeige};
   padding: 2.5rem;
   margin-top: 2rem;
+  @media (max-width: ${Sizes.tablet}) {
+    padding: 1rem;
+  }
 `;
 
 export default Theme;

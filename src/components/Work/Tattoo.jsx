@@ -14,6 +14,8 @@ const Picture = styled.img`
   @media (max-width: ${Sizes.tablet}) {
     width: 80%;
     margin-top: 2rem;
+    animation: none;
+  }
 `;
 
 export default function Tattoo({ id, picture }) {

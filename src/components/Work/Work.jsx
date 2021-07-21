@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import {
+  Sizes,
   Title,
   BorderBottom,
   Container,
@@ -16,6 +17,10 @@ import { toast } from "react-toastify";
 const TattoosContainer = styled(Container)`
   flex-wrap: wrap;
   margin: 0;
+  @media (max-width: ${Sizes.tablet}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const SmallInput = styled(Input)`

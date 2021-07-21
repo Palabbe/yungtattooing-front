@@ -80,7 +80,9 @@ export default function About() {
         text,
       });
       setNewChange(!newChange);
-      toast.success("Votre modification a été prise en compte");
+      toast.success(
+        "Votre modification a été prise en compte ! Actualisez la page pour la voir"
+      );
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import {
+  Sizes,
   Title,
   BorderBottom,
   Container,
@@ -17,6 +18,10 @@ const CardsContainer = styled(Container)`
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 0;
+  @media (max-width: ${Sizes.tablet}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const SmallInput = styled(Input)`
@@ -57,7 +62,9 @@ export default function Recommendations() {
         client_opinion: clientOpinion,
       });
       setNewChange(!newChange);
-      toast.success("Cette recommandation a bien été ajoutée");
+      toast.success(
+        "Cet avis a bien été ajouté ! Actualisez la page pour le voir"
+      );
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);

@@ -23,7 +23,7 @@ const DeleteButton = styled(Button)`
   border-radius: 50%;
 `;
 
-export default function Card({ id, picture }) {
+export default function Tattoo({ id, picture }) {
   const deletePicture = () => {
     axios
       .delete(`http://localhost:4040/work/${id}`)

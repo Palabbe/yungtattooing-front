@@ -8,7 +8,7 @@ import {
   Input,
   Button,
 } from "../../assets/styles/Theme";
-import Card from "./Card";
+import Tattoo from "./Tattoo";
 import { toast } from "react-toastify";
 
 const TattoosContainer = styled(Container)`
@@ -64,7 +64,7 @@ export default function Work() {
       <TattoosContainer flex aiCenter jcCenter>
         {workInfos.map((tattoo) => (
           <Container>
-            <Card id={tattoo.id} picture={tattoo.picture} />
+            <Tattoo id={tattoo.id} picture={tattoo.picture} />
           </Container>
         ))}
       </TattoosContainer>

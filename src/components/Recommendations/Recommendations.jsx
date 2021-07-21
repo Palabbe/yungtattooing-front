@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, BorderBottom, Container } from "../assets/styles/Theme";
+import { Title, BorderBottom, Container } from "../../assets/styles/Theme";
 
 export default function Recommendations() {
   return (

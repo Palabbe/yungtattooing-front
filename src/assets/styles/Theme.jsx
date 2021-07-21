@@ -90,4 +90,10 @@ export const DeleteButton = styled(Button)`
   font-size: 1rem;
 `;
 
+export const AdminContainer = styled(Container)`
+  background-color: ${Theme.colorBeige};
+  padding: 2.5rem;
+  margin-top: 2rem;
+`;
+
 export default Theme;

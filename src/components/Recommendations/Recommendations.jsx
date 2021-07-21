@@ -5,6 +5,7 @@ import {
   Title,
   BorderBottom,
   Container,
+  AdminContainer,
   Text,
   Input,
   Button,
@@ -82,23 +83,25 @@ export default function Recommendations() {
           />
         ))}
       </CardsContainer>
-      <Text>Ajouter un avis</Text>
-      <SmallInput
-        placeholder="Nom du client"
-        value={clientName}
-        onChange={(e) => setClientName(e.target.value)}
-      />
-      <SmallInput
-        placeholder="Insérer le lien direct vers l'image"
-        value={clientPicture}
-        onChange={(e) => setClientPicture(e.target.value)}
-      />
-      <SmallInput
-        placeholder="Avis"
-        value={clientOpinion}
-        onChange={(e) => setClientOpinion(e.target.value)}
-      />
-      <Button onClick={postNewRecommendation}>Ajouter un avis</Button>
+      <AdminContainer flex column aiCenter>
+        <Text>Ajouter un avis</Text>
+        <SmallInput
+          placeholder="Nom du client"
+          value={clientName}
+          onChange={(e) => setClientName(e.target.value)}
+        />
+        <SmallInput
+          placeholder="Insérer le lien direct vers la photo"
+          value={clientPicture}
+          onChange={(e) => setClientPicture(e.target.value)}
+        />
+        <SmallInput
+          placeholder="Avis"
+          value={clientOpinion}
+          onChange={(e) => setClientOpinion(e.target.value)}
+        />
+        <Button onClick={postNewRecommendation}>Ajouter un avis</Button>
+      </AdminContainer>
     </Container>
   );
 }

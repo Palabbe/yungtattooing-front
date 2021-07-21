@@ -5,6 +5,7 @@ import {
   Title,
   BorderBottom,
   Container,
+  AdminContainer,
   Text,
   Input,
   Button,
@@ -67,13 +68,15 @@ export default function Work() {
           <Tattoo id={tattoo.id} picture={tattoo.picture} />
         ))}
       </TattoosContainer>
-      <Text>Ajouter une photo</Text>
-      <SmallInput
-        placeholder="Insérer le lien direct vers la photo"
-        value={picture}
-        onChange={(e) => setPicture(e.target.value)}
-      />
-      <Button onClick={postNewPicture}>Ajouter une photo</Button>
+      <AdminContainer flex column aiCenter>
+        <Text>Ajouter une photo</Text>
+        <SmallInput
+          placeholder="Insérer le lien direct vers la photo"
+          value={picture}
+          onChange={(e) => setPicture(e.target.value)}
+        />
+        <Button onClick={postNewPicture}>Ajouter une photo</Button>
+      </AdminContainer>
     </Container>
   );
 }

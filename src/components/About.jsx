@@ -9,6 +9,7 @@ import {
   Container,
   Input,
   Button,
+  AdminContainer,
 } from "../assets/styles/Theme";
 import juliette from "../assets/img/juliette.jpeg";
 import styled, { keyframes } from "styled-components";
@@ -102,9 +103,11 @@ export default function About() {
         <Title>ABOUT ME</Title>
         <BorderBottom />
         <Text>{aboutInfos.text}</Text>
-        <Text>Modifier la description</Text>
-        <Input value={text} onChange={(e) => setText(e.target.value)} />
-        <Button onClick={updateText}>Modifier la description</Button>
+        <AdminContainer flex column aiCenter>
+          <Text>Modifier la description</Text>
+          <Input value={text} onChange={(e) => setText(e.target.value)} />
+          <Button onClick={updateText}>Modifier la description</Button>
+        </AdminContainer>
       </TextContainer>
       <Picture src={juliette} />
     </ComponentContainer>

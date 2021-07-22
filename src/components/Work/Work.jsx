@@ -55,7 +55,9 @@ export default function Work() {
         picture,
       });
       setNewChange(!newChange);
-      toast.success("Ce dessin a bien été ajouté");
+      toast.success(
+        "Ce dessin a bien été ajouté ! Actualisez la page pour le voir."
+      );
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);

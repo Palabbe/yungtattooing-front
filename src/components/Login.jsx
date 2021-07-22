@@ -5,10 +5,10 @@ import Theme, {
   Text,
   Input,
   Button,
-} from "../../assets/styles/Theme";
+} from "../assets/styles/Theme";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import adminContext from "../../contexts/context";
+import adminContext from "../contexts/context";
 
 const LoginContainer = styled(AdminContainer)`
   padding-top: 3rem;

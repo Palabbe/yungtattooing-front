@@ -60,7 +60,7 @@ export default function Recommendations() {
       });
       setNewChange(!newChange);
       toast.success(
-        "Cet avis a bien été ajouté ! Actualisez la page pour le voir"
+        "Cet avis a bien été ajouté ! Actualise la page pour le voir"
       );
     } catch (error) {
       // eslint-disable-next-line no-console

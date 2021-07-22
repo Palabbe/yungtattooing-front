@@ -70,7 +70,7 @@ export default function About() {
       });
       setNewChange(!newChange);
       toast.success(
-        "Votre modification a été prise en compte ! Actualisez la page pour la voir"
+        "Ta modification a été prise en compte ! Actualise la page pour la voir"
       );
     } catch (error) {
       // eslint-disable-next-line no-console

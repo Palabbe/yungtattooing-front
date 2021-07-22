@@ -7,7 +7,7 @@ import Work from "./components/Work/Work";
 import Recommendations from "./components/Recommendations/Recommendations";
 import Burger from "./components/Nav/Burger";
 import Contact from "./components/Contact";
-import Login from "./components/Authentification/Login";
+import Login from "./components/Login";
 import styled from "styled-components";
 import { Sizes, DeleteButton } from "./assets/styles/Theme";
 

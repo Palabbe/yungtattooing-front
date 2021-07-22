@@ -53,9 +53,10 @@ export const Text = styled.p`
 `;
 
 export const Input = styled.input`
+  width: 20rem;
+  height: 1rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
-  width: 90%;
-  height: 2.5rem;
   border: none;
   box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.3);
   &:hover {

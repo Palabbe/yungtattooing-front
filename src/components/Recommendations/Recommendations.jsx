@@ -25,12 +25,6 @@ const CardsContainer = styled(Container)`
   }
 `;
 
-const SmallInput = styled(Input)`
-  width: 20rem;
-  height: 1rem;
-  margin-bottom: 1rem;
-`;
-
 export default function Recommendations() {
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -95,17 +89,17 @@ export default function Recommendations() {
       </CardsContainer>
       <AdminContainer flex column aiCenter>
         <Text>Ajouter un avis</Text>
-        <SmallInput
+        <Input
           placeholder="Nom du client"
           value={clientName}
           onChange={(e) => setClientName(e.target.value)}
         />
-        <SmallInput
+        <Input
           placeholder="Insérer le lien direct vers la photo"
           value={clientPicture}
           onChange={(e) => setClientPicture(e.target.value)}
         />
-        <SmallInput
+        <Input
           placeholder="Avis"
           value={clientOpinion}
           onChange={(e) => setClientOpinion(e.target.value)}

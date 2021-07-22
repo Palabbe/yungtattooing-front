@@ -6,6 +6,7 @@ import Work from "./components/Work/Work";
 import Recommendations from "./components/Recommendations/Recommendations";
 import Burger from "./components/Nav/Burger";
 import Contact from "./components/Contact";
+import LoginFeatures from "./components/Authentification/LoginFeatures";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -27,6 +28,7 @@ export default function RouterApp() {
         <Route path="/mywork" component={Work} />
         <Route path="/recommendations" component={Recommendations} />
         <Route path="/contact" component={Contact} />
+        <Route path="/admin" component={LoginFeatures} />
       </Switch>
     </Router>
   );

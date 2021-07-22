@@ -24,11 +24,6 @@ const TattoosContainer = styled(Container)`
   }
 `;
 
-const SmallInput = styled(Input)`
-  width: 20rem;
-  height: 1rem;
-`;
-
 export default function Work() {
   const [workInfos, setWorkInfos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -80,7 +75,7 @@ export default function Work() {
       </TattoosContainer>
       <AdminContainer flex column aiCenter>
         <Text>Ajouter une photo</Text>
-        <SmallInput
+        <Input
           placeholder="Insérer le lien direct vers la photo"
           value={picture}
           onChange={(e) => setPicture(e.target.value)}

@@ -4,6 +4,7 @@ import RouterApp from "./Router";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Theme from "./assets/styles/Theme";
+import LoginFeatures from "./components/Authentification/LoginFeatures";
 
 function App() {
   return (

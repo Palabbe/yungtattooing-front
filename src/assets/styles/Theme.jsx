@@ -68,6 +68,9 @@ export const Input = styled.input`
     outline: none;
     border: 1px solid ${Theme.colorOchre};
   }
+  @media (max-width: ${Sizes.tablet}) {
+    ${(props) => props.smaller && "width: 17rem;"};
+  }
 `;
 
 export const Button = styled.button`

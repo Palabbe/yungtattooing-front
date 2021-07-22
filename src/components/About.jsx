@@ -18,7 +18,8 @@ import juliette from "../assets/img/juliette.jpeg";
 import styled from "styled-components";
 
 const ComponentContainer = styled(Container)`
-  @media (max-width: ${Sizes.tablet}) {
+  @media (max-width: ${Sizes.laptop}) {
+    margin-top: 5rem;
     flex-direction: column;
   }
 `;
@@ -28,7 +29,7 @@ const TextContainer = styled(Container)`
   margin-right: 10rem;
   animation: 1s ${fadeInLeftAnimation};
   @media (max-width: ${Sizes.tablet}) {
-    width: 80%;
+    width: 95%;
     margin: 0;
     animation: none;
   }
@@ -92,7 +93,11 @@ export default function About() {
         {admin && (
           <AdminContainer flex column aiCenter>
             <Text>Modifier la description</Text>
-            <Input value={text} onChange={(e) => setText(e.target.value)} />
+            <Input
+              smaller
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
             <Button onClick={updateText}>Modifier la description</Button>
           </AdminContainer>
         )}

@@ -93,11 +93,7 @@ export default function About() {
         {admin && (
           <AdminContainer flex column aiCenter>
             <Text>Modifier la description</Text>
-            <Input
-              smaller
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
+            <Input value={text} onChange={(e) => setText(e.target.value)} />
             <Button onClick={updateText}>Modifier la description</Button>
           </AdminContainer>
         )}

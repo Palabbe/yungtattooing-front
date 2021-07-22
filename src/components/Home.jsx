@@ -19,8 +19,11 @@ const HomeTitle = styled(Title)`
   margin: 0;
   padding: 0;
   border-bottom: none;
-  @media (max-width: ${Sizes.tablet}) {
-    font-size: 2rem;
+  @media screen and (max-width: ${Sizes.mobile}) {
+    font-size: 1.7rem;
+  }
+  @media screen and (min-width: ${Sizes.tablet}) and (max-width: ${Sizes.laptop}) {
+    font-size: 4rem;
   }
 `;
 

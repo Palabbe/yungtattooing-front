@@ -55,7 +55,7 @@ export const Text = styled.p`
 `;
 
 export const Input = styled.input`
-  width: 20rem;
+  width: 80%;
   height: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
@@ -67,9 +67,6 @@ export const Input = styled.input`
   &:focus {
     outline: none;
     border: 1px solid ${Theme.colorOchre};
-  }
-  @media (max-width: ${Sizes.tablet}) {
-    ${(props) => props.smaller && "width: 17rem;"};
   }
 `;
 
@@ -102,6 +99,7 @@ export const AdminContainer = styled(Container)`
   margin-top: 2rem;
   @media (max-width: ${Sizes.tablet}) {
     padding: 1rem;
+    width: 80%;
   }
 `;
 

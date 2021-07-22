@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import axios from "axios";
 import { toast } from "react-toastify";
 import {
@@ -8,9 +8,7 @@ import {
   Text,
   DeleteButton,
 } from "../../assets/styles/Theme";
-import { zoomIn } from "react-animations";
-
-const zoomInAnimation = keyframes`${zoomIn}`;
+import { zoomInAnimation } from "../../assets/styles/Animations";
 
 const CardContainer = styled(Container)`
   margin: 3%;

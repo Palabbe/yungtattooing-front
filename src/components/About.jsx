@@ -11,12 +11,10 @@ import {
   Button,
   AdminContainer,
 } from "../assets/styles/Theme";
+import { fadeInLeftAnimation } from "../assets/styles/Animations";
 import Loader from "./Loader";
 import juliette from "../assets/img/juliette.jpeg";
-import styled, { keyframes } from "styled-components";
-import { fadeInLeft } from "react-animations";
-
-const fadeInLeftAnimation = keyframes`${fadeInLeft}`;
+import styled from "styled-components";
 
 const ComponentContainer = styled(Container)`
   @media (max-width: ${Sizes.tablet}) {

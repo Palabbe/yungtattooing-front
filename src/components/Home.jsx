@@ -1,11 +1,9 @@
 import React from "react";
 import { Sizes, Title, Container, Button } from "../assets/styles/Theme";
+import { fadeInUpAnimation } from "../assets/styles/Animations";
 import { Link } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import homePicture from "../assets/img/home.jpg";
-import { fadeInUp } from "react-animations";
-
-const fadeInUpAnimation = keyframes`${fadeInUp}`;
 
 const Picture = styled.img`
   width: 50rem;

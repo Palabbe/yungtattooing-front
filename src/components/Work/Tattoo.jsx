@@ -1,11 +1,9 @@
 import React from "react";
 import axios from "axios";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Sizes, Container, DeleteButton } from "../../assets/styles/Theme";
+import { zoomInAnimation } from "../../assets/styles/Animations";
 import { toast } from "react-toastify";
-import { zoomIn } from "react-animations";
-
-const zoomInAnimation = keyframes`${zoomIn}`;
 
 const Picture = styled.img`
   height: 30rem;

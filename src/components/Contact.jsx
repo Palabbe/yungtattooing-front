@@ -6,11 +6,9 @@ import {
   Text,
   Container,
 } from "../assets/styles/Theme";
-import styled, { keyframes } from "styled-components";
+import { fadeInRightAnimation } from "../assets/styles/Animations";
+import styled from "styled-components";
 import contactPicture from "../assets/img/contact.jpg";
-import { fadeInRight } from "react-animations";
-
-const fadeInRightAnimation = keyframes`${fadeInRight}`;
 
 const ComponentContainer = styled(Container)`
   @media (max-width: ${Sizes.tablet}) {

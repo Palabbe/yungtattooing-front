@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import adminContext from "../../contexts/context";
 import styled from "styled-components";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -39,6 +40,7 @@ const ClientOpinion = styled(Text)`
 `;
 
 export default function Card({ id, name, picture, opinion }) {
+  const { admin } = useContext(adminContext);
   const deleteRecommendation = () => {
     axios
       .delete(`http://localhost:4040/recommendations/${id}`)
@@ -58,9 +60,11 @@ export default function Card({ id, name, picture, opinion }) {
       </Container>
       <ClientName>{name}</ClientName>
       <ClientOpinion>{opinion}</ClientOpinion>
-      <DeleteButton onClick={deleteRecommendation}>
-        <i class="fas fa-trash-alt"></i>
-      </DeleteButton>
+      {admin && (
+        <DeleteButton onClick={deleteRecommendation}>
+          <i class="fas fa-trash-alt"></i>
+        </DeleteButton>
+      )}
     </CardContainer>
   );
 }

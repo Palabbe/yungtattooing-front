@@ -46,13 +46,13 @@ export default function Contact() {
         </Text>
         <Text>
           <a
-            href="mailto:pauline.labbe7@gmail.com"
+            href="mailto:yungtatouage@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
             <i className="fas fa-envelope fa-lg" style={{ color: "black" }}></i>
           </a>{" "}
-          yungtattooing@gmail.com
+          yungtatouage@gmail.com
         </Text>
       </TextContainer>
     </ComponentContainer>

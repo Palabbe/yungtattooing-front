@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import adminContext from "../../contexts/context";
 import axios from "axios";
 import styled from "styled-components";
 import { Sizes, Container, DeleteButton } from "../../assets/styles/Theme";
@@ -17,6 +18,7 @@ const Picture = styled.img`
 `;
 
 export default function Tattoo({ id, picture }) {
+  const { admin } = useContext(adminContext);
   const deletePicture = () => {
     axios
       .delete(`http://localhost:4040/work/${id}`)
@@ -32,9 +34,11 @@ export default function Tattoo({ id, picture }) {
   return (
     <Container>
       <Picture src={picture} />
-      <DeleteButton onClick={deletePicture}>
-        <i class="fas fa-trash-alt"></i>
-      </DeleteButton>
+      {admin && (
+        <DeleteButton onClick={deletePicture}>
+          <i class="fas fa-trash-alt"></i>
+        </DeleteButton>
+      )}
     </Container>
   );
 }

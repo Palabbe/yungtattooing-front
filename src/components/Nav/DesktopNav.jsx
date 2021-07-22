@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
-import adminContext from "../../contexts/context";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Theme, { Sizes, Container, Button } from "../../assets/styles/Theme";
+import Theme, { Sizes, Container } from "../../assets/styles/Theme";
 
 const Ul = styled.ul`
   list-style: none;
@@ -41,9 +40,8 @@ const Ul = styled.ul`
 `;
 
 const DesktopNav = ({ open }) => {
-  const { admin, handleLogout } = useContext(adminContext);
   return (
-    <Container flex spaceBetween>
+    <Container>
       <Ul open={open}>
         <Link to="/" style={{ textDecoration: "none" }}>
           <li>HOME</li>
@@ -61,11 +59,6 @@ const DesktopNav = ({ open }) => {
           <li>CONTACT</li>
         </Link>
       </Ul>
-      {admin && (
-        <Button type="button" onClick={handleLogout}>
-          Se déconnecter
-        </Button>
-      )}
     </Container>
   );
 };

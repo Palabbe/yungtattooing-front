@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import adminContext from "../../contexts/context";
 import axios from "axios";
 import styled from "styled-components";
 import {
@@ -25,6 +26,7 @@ const TattoosContainer = styled(Container)`
 `;
 
 export default function Work() {
+  const { admin } = useContext(adminContext);
   const [workInfos, setWorkInfos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [picture, setPicture] = useState("");
@@ -73,15 +75,17 @@ export default function Work() {
           <Tattoo id={tattoo.id} picture={tattoo.picture} />
         ))}
       </TattoosContainer>
-      <AdminContainer flex column aiCenter>
-        <Text>Ajouter une photo</Text>
-        <Input
-          placeholder="Insérer le lien direct vers la photo"
-          value={picture}
-          onChange={(e) => setPicture(e.target.value)}
-        />
-        <Button onClick={postNewPicture}>Ajouter une photo</Button>
-      </AdminContainer>
+      {admin && (
+        <AdminContainer flex column aiCenter>
+          <Text>Ajouter une photo</Text>
+          <Input
+            placeholder="Insérer le lien direct vers la photo"
+            value={picture}
+            onChange={(e) => setPicture(e.target.value)}
+          />
+          <Button onClick={postNewPicture}>Ajouter une photo</Button>
+        </AdminContainer>
+      )}
     </Container>
   );
 }

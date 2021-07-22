@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import Theme, {
   Container,
   AdminContainer,
@@ -5,7 +6,9 @@ import Theme, {
   Input,
   Button,
 } from "../../assets/styles/Theme";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import adminContext from "../../contexts/context";
 
 const LoginContainer = styled(AdminContainer)`
   padding-top: 3rem;
@@ -28,18 +31,19 @@ const Span = styled.span`
   }
 `;
 
-export default function Login({
-  email,
-  setEmail,
-  password,
-  setPassword,
-  handleLogin,
-  handleSignup,
-  hasAccount,
-  setHasAccount,
-  emailError,
-  passwordError,
-}) {
+export default function Login() {
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleLogin,
+    handleSignup,
+    hasAccount,
+    setHasAccount,
+    emailError,
+    passwordError,
+  } = useContext(adminContext);
   return (
     <Container flex aiCenter jcCenter>
       <LoginContainer flex column jcCenter aiCenter>
@@ -61,9 +65,11 @@ export default function Login({
         <Container flex column aiCenter>
           {hasAccount ? (
             <>
-              <Button type="button" onClick={handleLogin}>
-                Se connecter
-              </Button>
+              <Link to="/">
+                <Button type="button" onClick={handleLogin}>
+                  Se connecter
+                </Button>
+              </Link>
               <Text>
                 Tu n'as pas de compte ?
                 <Span onClick={() => setHasAccount(!hasAccount)}>
@@ -73,9 +79,11 @@ export default function Login({
             </>
           ) : (
             <>
-              <Button type="button" onClick={handleSignup}>
-                S'inscrire
-              </Button>
+              <Link to="/">
+                <Button type="button" onClick={handleSignup}>
+                  S'inscrire
+                </Button>
+              </Link>
               <Text>
                 Tu as déjà un compte ?
                 <Span onClick={() => setHasAccount(!hasAccount)}>

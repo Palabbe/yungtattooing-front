@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import adminContext from "../../contexts/context";
 import axios from "axios";
 import styled from "styled-components";
 import {
@@ -26,6 +27,7 @@ const CardsContainer = styled(Container)`
 `;
 
 export default function Recommendations() {
+  const { admin } = useContext(adminContext);
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [clientName, setClientName] = useState("");
@@ -87,25 +89,27 @@ export default function Recommendations() {
           />
         ))}
       </CardsContainer>
-      <AdminContainer flex column aiCenter>
-        <Text>Ajouter un avis</Text>
-        <Input
-          placeholder="Nom du client"
-          value={clientName}
-          onChange={(e) => setClientName(e.target.value)}
-        />
-        <Input
-          placeholder="Insérer le lien direct vers la photo"
-          value={clientPicture}
-          onChange={(e) => setClientPicture(e.target.value)}
-        />
-        <Input
-          placeholder="Avis"
-          value={clientOpinion}
-          onChange={(e) => setClientOpinion(e.target.value)}
-        />
-        <Button onClick={postNewRecommendation}>Ajouter un avis</Button>
-      </AdminContainer>
+      {admin && (
+        <AdminContainer flex column aiCenter>
+          <Text>Ajouter un avis</Text>
+          <Input
+            placeholder="Nom du client"
+            value={clientName}
+            onChange={(e) => setClientName(e.target.value)}
+          />
+          <Input
+            placeholder="Insérer le lien direct vers la photo"
+            value={clientPicture}
+            onChange={(e) => setClientPicture(e.target.value)}
+          />
+          <Input
+            placeholder="Avis"
+            value={clientOpinion}
+            onChange={(e) => setClientOpinion(e.target.value)}
+          />
+          <Button onClick={postNewRecommendation}>Ajouter un avis</Button>
+        </AdminContainer>
+      )}
     </Container>
   );
 }

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import adminContext from "../../contexts/context";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Theme, { Sizes } from "../../assets/styles/Theme";
+import Theme, { Sizes, Container, Button } from "../../assets/styles/Theme";
 
 const Ul = styled.ul`
   list-style: none;
@@ -40,24 +41,32 @@ const Ul = styled.ul`
 `;
 
 const DesktopNav = ({ open }) => {
+  const { admin, handleLogout } = useContext(adminContext);
   return (
-    <Ul open={open}>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <li>HOME</li>
-      </Link>
-      <Link to="/about" style={{ textDecoration: "none" }}>
-        <li>ABOUT ME</li>
-      </Link>
-      <Link to="/mywork" style={{ textDecoration: "none" }}>
-        <li>MY WORK</li>
-      </Link>
-      <Link to="/recommendations" style={{ textDecoration: "none" }}>
-        <li>PEOPLE SAY</li>
-      </Link>
-      <Link to="/contact" style={{ textDecoration: "none" }}>
-        <li>CONTACT</li>
-      </Link>
-    </Ul>
+    <Container flex spaceBetween>
+      <Ul open={open}>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <li>HOME</li>
+        </Link>
+        <Link to="/about" style={{ textDecoration: "none" }}>
+          <li>ABOUT ME</li>
+        </Link>
+        <Link to="/mywork" style={{ textDecoration: "none" }}>
+          <li>MY WORK</li>
+        </Link>
+        <Link to="/recommendations" style={{ textDecoration: "none" }}>
+          <li>PEOPLE SAY</li>
+        </Link>
+        <Link to="/contact" style={{ textDecoration: "none" }}>
+          <li>CONTACT</li>
+        </Link>
+      </Ul>
+      {admin && (
+        <Button type="button" onClick={handleLogout}>
+          Se déconnecter
+        </Button>
+      )}
+    </Container>
   );
 };
 

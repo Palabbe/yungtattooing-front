@@ -13,6 +13,8 @@ export const Container = styled.div`
   ${(props) => props.aiCenter && "align-items:center"};
   ${(props) => props.acCenter && "align-content:center"};
   ${(props) => props.jcCenter && "justify-content:center"};
+  ${(props) => props.spaceAround && "justify-content:space-around"};
+  ${(props) => props.spaceBetween && "justify-content:space-between"};
   margin-bottom: 2rem;
 `;
 

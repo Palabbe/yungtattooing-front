@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import adminContext from "../contexts/context";
 import { toast } from "react-toastify";
 import {
   Sizes,
@@ -42,6 +43,7 @@ const Picture = styled.img`
 `;
 
 export default function About() {
+  const { admin } = useContext(adminContext);
   const [aboutInfos, setAboutInfos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [text, setText] = useState("");
@@ -87,11 +89,13 @@ export default function About() {
         <Title>ABOUT ME</Title>
         <BorderBottom />
         <Text>{aboutInfos.text}</Text>
-        <AdminContainer flex column aiCenter>
-          <Text>Modifier la description</Text>
-          <Input value={text} onChange={(e) => setText(e.target.value)} />
-          <Button onClick={updateText}>Modifier la description</Button>
-        </AdminContainer>
+        {admin && (
+          <AdminContainer flex column aiCenter>
+            <Text>Modifier la description</Text>
+            <Input value={text} onChange={(e) => setText(e.target.value)} />
+            <Button onClick={updateText}>Modifier la description</Button>
+          </AdminContainer>
+        )}
       </TextContainer>
       <Picture src={juliette} />
     </ComponentContainer>

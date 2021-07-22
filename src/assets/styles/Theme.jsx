@@ -97,6 +97,7 @@ export const AdminContainer = styled(Container)`
   background-color: ${Theme.colorBeige};
   padding: 2.5rem;
   margin-top: 2rem;
+  width: 20rem;
   @media (max-width: ${Sizes.tablet}) {
     padding: 1rem;
     width: 80%;

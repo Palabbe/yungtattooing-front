@@ -15,6 +15,9 @@ const Picture = styled.img`
     margin-top: 2rem;
     animation: none;
   }
+  @media screen and (min-width: ${Sizes.tablet}) and (max-width: ${Sizes.laptop}) {
+    width: 65%;
+  }
 `;
 
 export default function Tattoo({ id, picture }) {

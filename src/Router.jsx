@@ -7,7 +7,7 @@ import Work from "./components/Work/Work";
 import Recommendations from "./components/Recommendations/Recommendations";
 import Burger from "./components/Nav/Burger";
 import Contact from "./components/Contact";
-import Login from "./components/Login";
+import Admin from "./components/Admin";
 import styled from "styled-components";
 import { Sizes, DeleteButton } from "./assets/styles/Theme";
 
@@ -46,7 +46,7 @@ export default function RouterApp() {
         <Route path="/mywork" component={Work} />
         <Route path="/recommendations" component={Recommendations} />
         <Route path="/contact" component={Contact} />
-        <Route path="/admin" component={Login} />
+        <Route path="/admin" component={Admin} />
       </Switch>
     </Router>
   );

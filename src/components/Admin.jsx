@@ -31,7 +31,7 @@ const Span = styled.span`
   }
 `;
 
-export default function Login() {
+export default function Admin() {
   const {
     email,
     setEmail,
@@ -66,20 +66,6 @@ export default function Login() {
           {hasAccount ? (
             <>
               <Link to="/">
-                <Button type="button" onClick={handleLogin}>
-                  Se connecter
-                </Button>
-              </Link>
-              <Text>
-                Tu n'as pas de compte ?
-                <Span onClick={() => setHasAccount(!hasAccount)}>
-                  S'inscrire
-                </Span>
-              </Text>
-            </>
-          ) : (
-            <>
-              <Link to="/">
                 <Button type="button" onClick={handleSignup}>
                   S'inscrire
                 </Button>
@@ -88,6 +74,20 @@ export default function Login() {
                 Tu as déjà un compte ?
                 <Span onClick={() => setHasAccount(!hasAccount)}>
                   Se connecter
+                </Span>
+              </Text>
+            </>
+          ) : (
+            <>
+              <Link to="/">
+                <Button type="button" onClick={handleLogin}>
+                  Se connecter
+                </Button>
+              </Link>
+              <Text>
+                Tu n'as pas de compte ?
+                <Span onClick={() => setHasAccount(!hasAccount)}>
+                  S'inscrire
                 </Span>
               </Text>
             </>

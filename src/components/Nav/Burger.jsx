@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Theme, { Sizes } from "../assets/styles/Theme";
-import RightNav from "./RightNav";
+import Theme, { Sizes } from "../../assets/styles/Theme";
+import DesktopNav from "./DesktopNav";
 
 const StyledBurger = styled.div`
   width: 2rem;
@@ -53,7 +53,7 @@ const Burger = () => {
         <div />
         <div />
       </StyledBurger>
-      <RightNav open={open} />
+      <DesktopNav open={open} />
     </>
   );
 };

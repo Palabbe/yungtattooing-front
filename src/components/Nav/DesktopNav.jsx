@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Theme, { Sizes } from "../assets/styles/Theme";
+import Theme, { Sizes } from "../../assets/styles/Theme";
 
 const Ul = styled.ul`
   list-style: none;
@@ -39,7 +39,7 @@ const Ul = styled.ul`
   }
 `;
 
-const RightNav = ({ open }) => {
+const DesktopNav = ({ open }) => {
   return (
     <Ul open={open}>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -61,4 +61,4 @@ const RightNav = ({ open }) => {
   );
 };
 
-export default RightNav;
+export default DesktopNav;

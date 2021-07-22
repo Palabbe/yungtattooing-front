@@ -11,11 +11,10 @@ import {
   Button,
   AdminContainer,
 } from "../assets/styles/Theme";
+import Loader from "./Loader";
 import juliette from "../assets/img/juliette.jpeg";
 import styled, { keyframes } from "styled-components";
 import { fadeInLeft } from "react-animations";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import { makeStyles } from "@material-ui/core/styles";
 
 const fadeInLeftAnimation = keyframes`${fadeInLeft}`;
 
@@ -44,17 +43,7 @@ const Picture = styled.img`
     margin-top: 2rem;
 `;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}));
-
 export default function About() {
-  const classes = useStyles();
   const [aboutInfos, setAboutInfos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [text, setText] = useState("");
@@ -92,12 +81,7 @@ export default function About() {
     }
   };
 
-  if (loading)
-    return (
-      <Container className={classes.root} flex aiCenter jcCenter>
-        <CircularProgress />
-      </Container>
-    );
+  if (loading) return <Loader />;
 
   return (
     <ComponentContainer flex aiCenter jcCenter>

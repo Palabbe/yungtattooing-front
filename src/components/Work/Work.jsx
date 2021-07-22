@@ -11,10 +11,9 @@ import {
   Input,
   Button,
 } from "../../assets/styles/Theme";
+import Loader from "../Loader";
 import Tattoo from "./Tattoo";
 import { toast } from "react-toastify";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import { makeStyles } from "@material-ui/core/styles";
 
 const TattoosContainer = styled(Container)`
   flex-wrap: wrap;
@@ -30,17 +29,7 @@ const SmallInput = styled(Input)`
   height: 1rem;
 `;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}));
-
 export default function Work() {
-  const classes = useStyles();
   const [workInfos, setWorkInfos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [picture, setPicture] = useState("");
@@ -76,12 +65,7 @@ export default function Work() {
     }
   };
 
-  if (loading)
-    return (
-      <Container className={classes.root} flex aiCenter jcCenter>
-        <CircularProgress />
-      </Container>
-    );
+  if (loading) return <Loader />;
 
   return (
     <Container flex column aiCenter jcCenter>

@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Work from "./components/Work/Work";
 import Recommendations from "./components/Recommendations/Recommendations";
-import Burger from "./components/Burger";
+import Burger from "./components/Nav/Burger";
 import Contact from "./components/Contact";
 import styled from "styled-components";
 

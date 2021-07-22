@@ -11,10 +11,9 @@ import {
   Input,
   Button,
 } from "../../assets/styles/Theme";
+import Loader from "../Loader";
 import Card from "./Card";
 import { toast } from "react-toastify";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import { makeStyles } from "@material-ui/core/styles";
 
 const CardsContainer = styled(Container)`
   justify-content: space-around;
@@ -32,17 +31,7 @@ const SmallInput = styled(Input)`
   margin-bottom: 1rem;
 `;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}));
-
 export default function Recommendations() {
-  const classes = useStyles();
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [clientName, setClientName] = useState("");
@@ -88,12 +77,7 @@ export default function Recommendations() {
     }
   };
 
-  if (loading)
-    return (
-      <Container className={classes.root} flex aiCenter jcCenter>
-        <CircularProgress />
-      </Container>
-    );
+  if (loading) return <Loader />;
 
   return (
     <Container flex column aiCenter jcCenter>

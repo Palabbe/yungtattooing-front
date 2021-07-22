@@ -28,7 +28,7 @@ export const Title = styled.h1`
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
   font-size: 3rem;
-  @media (max-width: 768px) {
+  @media (max-width: ${Sizes.tablet}) {
     font-size: 1.5rem;
   }
 `;

@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Firebase
+
+This project uses a firebase authentification. 
+Create a projet with firebase on console.firebase.google.com and click on "Authentification"
+Click on get started and chose Email/Password
+In the project settings, get the SDK Firebase. 
+Create a new file Firebase.js in the src folder.
+Copy and paste the SDK Firebase code in the Firebase.js file.
+
 ## Available Scripts
 
 In the project directory, you can run:
